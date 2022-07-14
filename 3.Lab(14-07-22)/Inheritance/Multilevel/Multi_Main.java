@@ -7,7 +7,6 @@ public class Multi_Main extends Multi_Pali {
 	// main method 
 	public static void main(String[] args) 
 	{
-
 		// calling the another class method
 		Multi_Main ob = new Multi_Main();
 		ob.pali();
