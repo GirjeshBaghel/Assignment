@@ -3,12 +3,15 @@ package Revision;
 
 import java.util.Scanner;
 
+// Main class 
 public class Multi_Fibo {
+	// global variable to use inherit classes 
 	Scanner sc = new Scanner(System.in);
     int n1, n2,n3,count,n,r,temp,sum=0;
-	 public  void fibo()
-	    {
-	        
+	
+    // fibo method
+    public  void fibo()
+	    {	        
 	        // asking the starting value and last value
 	        System.out.print("Please enter the two value for Fibonacci Series : ");
 	        n1 = sc.nextInt();
