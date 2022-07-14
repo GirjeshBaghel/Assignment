@@ -5,23 +5,27 @@ import java.util.Scanner;
 
 public class Array_Chng {
 
-	
-	public static void main(String[] args) {
+	// rev method
+	public void rev()
+	{
 		int i,j;
-		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int row,col;
+		
+		// taking rows and column from user
 		System.out.print("Enter the no of row : ");
 		row = sc.nextInt();
 		System.out.print("Enter the no of coloum : ");
 		col = sc.nextInt();
 		
+		// Taking array from user
 		System.out.println("Enter array : ");
 		int arr[][] = new int[row][col];
 		for(i=0; i<row; i++)
 		{
 			for(j=0; j<col; j++)
 			{
+				//Taking array from user
 				arr[i][j] = sc.nextInt();
 				
 			}
@@ -29,20 +33,24 @@ public class Array_Chng {
 		System.out.println();
 		}
 		
+		//Taking new 2 dimensional array
 		int tran[][] = new int[row][col];
 		
+		//Checking the conditions row or equal or not
 		if(row == col)
 		{
 			for(i=0; i<row; i++)
 			{
 				for(j=0; j<col; j++)
 				{
+					// If they equal then arr[][] values transfers to tran[][] array
 					tran[i][j] = arr[j][i];
 										
 				}
 				
 			}
 			
+			// After transfer array then printing process
 			for(i=0; i<row; i++)
 			{
 				for(j=0; j<col; j++)
@@ -52,12 +60,15 @@ public class Array_Chng {
 				System.out.println();
 			}
 		}
+		
+		// If they are not equal then arr[i] to arr[j] interchange the values
 		else 
 		{
 			for(i=0; i<col; i++)
 			{
 				for(j=0; j<row; j++)
 				{
+					// printing arr values 
 					System.out.print(arr[j][i]+" ");
 				}
 				System.out.println();
@@ -66,6 +77,14 @@ public class Array_Chng {
 		
 
 	}
+	
+	// main method
+	public static void main(String[] args) {
+		Array_Chng ob = new Array_Chng();
+		
+		//calling rev method
+		ob.rev();
+		
+	}
 
 }
-
