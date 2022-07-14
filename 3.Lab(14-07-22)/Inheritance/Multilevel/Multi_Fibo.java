@@ -1,6 +1,5 @@
 //WAP to create a class for Fibonacci series, second class Palindrom No , Third class use both the class property and display the output
 package Revision;
-
 import java.util.Scanner;
 
 // Main class 
