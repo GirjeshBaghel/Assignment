@@ -1,19 +1,20 @@
 package Revision;
 
-import java.util.Scanner;
 
 public class Bank  extends User_Details{
-	  static Scanner sc = new Scanner(System.in);
-	char cont = 'y';
-	static int choice,pin1,with,depo,bal=500;
-	User_Details t = new User_Details();
 	
+	// details method calling by the another class
 	public void details()
 	{
+		// do while loop
 		do {
 		System.out.println("\tWelcome to the Electronical Fund Trasfer Machine\t");
+		
+		// taking bank name from user
 		System.out.print("Enter your Bank Name Here : ");
 		setBank(sc.next());
+		
+		
 		System.out.print("Enter your Account no : ");
 		setAccount(sc.nextLong()); 
 		
@@ -26,48 +27,41 @@ public class Bank  extends User_Details{
 		System.out.print("Enter Your Pin no : ");
 		setPin(sc.nextInt());
 		
+		// checking pin from user
 		if(getPin() == 1234)
 		{
 			System.out.println("Enter your choose here.");
 			System.out.println("1.Withdrwal \n2.Deposit \n3.Balance");
 			choice = sc.nextInt();
-			if(choice == 1)
+			// switch case to user choice
+			switch(choice)
 			{
+			 case '1':
 				withdraw();
-			}
-			else if(choice == 2)
-			{
-				deposit();
-			}
-			else if(choice == 3)
-			{
-				bal = depo-with;
-				System.out.println("Bank Name : "+t.getBank());
-				System.out.println("Account No : "+t.getAccount());
-				System.out.println("Your Balance is : "+bal);
-			}
-			else
-			{
-				System.out.println("Please enter correct choice.. ");
+			 case '2':
+				 deposit();
+			 case '3':
+				 balance();
+				default:
+					System.out.println("Invalid Choice..");
 			}
 			
-			System.out.print("\nDo you want to continue (y/n) ? ");
-			cont = sc.next().charAt(0);
 		}
+		// if pin is wrong then else part run
 		else
 		{
 			System.out.println("Wrong pin..");
 		}
-		System.out.print("\nDo you want to continue (y/n) ? ");
-		cont = sc.next().charAt(0);
-		}
 		
-		// checking conditions that user wants to continue or not
-		while(cont == 'y' || cont == 'Y');
+			System.out.print("\nDo you want to continue (y/n) ? ");
+			cont = sc.next().charAt(0);
+		}		
 		
+		while(cont == 'y' || cont == 'Y'); // checking conditions that user wants to continue or not
 		
 	}
 	
+	// withdraw method calling inside the switch
 	public static  void withdraw()
 	{
 		System.out.print("Enter the amount : ");
@@ -81,16 +75,18 @@ public class Bank  extends User_Details{
 		}
 		
 	}
-	
-	public void deposit()
+	// balance method calling inside the switch
+	public static void balance()
+	{
+		bal = depo-with;
+		System.out.println("Your Balance is : "+bal);
+	}
+	// deposit method calling inside the switch
+	public static void deposit()
 	{
 		System.out.print("Enter the amount : ");
 		depo = sc.nextInt();
-		
-		
 		System.out.println("Your Total Balance  : "+(bal+depo));
-				
-		
 	}
 	
 }
