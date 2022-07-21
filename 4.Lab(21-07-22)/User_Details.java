@@ -1,7 +1,20 @@
 package Revision;
 
-public class User_Details {
+import java.util.Scanner;
 
+public class User_Details {
+	
+	//private variables
+	private String bank,name;
+	private long account,ph;	
+	private  int pin;
+	
+	//global variables 
+	static Scanner sc = new Scanner(System.in);
+	char cont = 'y';
+	static int choice,pin1,with,depo,bal=500;
+
+	// getter and setter methods
 	public String getBank() {
 		return bank;
 	}
@@ -32,8 +45,6 @@ public class User_Details {
 	public void setPin(int pin) {
 		this.pin = pin;
 	}
-	private String bank,name;
-	private long account,ph;	
-	private  int pin;
+	
 	
 }
