@@ -2,7 +2,7 @@
 //the user Id lenght is greater than 8 and password is not matched and should only contain the string value.
 package Revision;
 
-public class Calling_Class  extends Data_Class{
+public class Main_Class  extends Data_Class{
 	
 	
 	public void details()
