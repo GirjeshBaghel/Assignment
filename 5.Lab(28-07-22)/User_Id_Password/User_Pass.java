@@ -8,13 +8,13 @@ public class User_Pass {
 	
 	static int pass_length=9;
 	 Scanner sc= new Scanner(System.in);
-	 //class for accepting the id from user
-	public void accept() {
+	
+	public void accept() {  //class for accepting the id from user
 	
 		System.out.println("Enter your user id :");
 		System.out.println("The should be in 6 digit :");
 		
-		try {
+		try {   // try block to check the exception
 			s = sc.next();
 			if(s.length() != 6)
 			{
@@ -25,7 +25,7 @@ public class User_Pass {
 					password();		
 			}
 		}
-		catch(Exception e)
+		catch(Exception e) // if exception will be occur then catch will be handel
 		{
 			System.out.println(e);
 			System.out.println("The ID Shoud be maximun 6 length.");
@@ -37,6 +37,7 @@ public class User_Pass {
 	// class for password
 		public void password()
 		{
+			// password condtions 
 			System.out.println("Password should not contain any space.\n"
 					+ "Password should contain at least one digit(0-9).\n"
 					+ "Password length should be between 0 to 9 characters.\n"
@@ -110,7 +111,7 @@ public class User_Pass {
 		        return (ch >= '0' && ch <= '9');
 		    }
 		    
-		    public void show()
+		    public void show() // show method call when all the conditions will be true
 			{
 				
 				System.out.println("Your Id : "+user_Id);
