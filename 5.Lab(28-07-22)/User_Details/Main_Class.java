@@ -2,7 +2,7 @@
 //the user Id lenght is greater than 8 and password is not matched and should only contain the string value.
 package Revision;
 
-public class Main_Class  extends Variable_Class{ // main class taking all the properties of Variable class
+public class Main_Class  { // main class taking all the properties of Variable class
 	
 	
 	public void details()	// details method calls inside the main method
@@ -25,9 +25,8 @@ public class Main_Class  extends Variable_Class{ // main class taking all the pr
 	{
 		System.out.print("Id : "); // taking id from the user
 		try {
-			ide = sc.next();
-			setId(ide);
-			if(ide.length() != 6) // checking the length of id is 6 or not
+			ob.setId(sc.next());
+			if(ob.getId().length() != 6) // checking the length of id is 6 or not
 			{
 				throw new User_Excep("Enter the Valid Id here ."); // if length is not equal to 6 then throw an exception	
 			}
@@ -50,12 +49,12 @@ public class Main_Class  extends Variable_Class{ // main class taking all the pr
 		System.out.print("1. A password must have at least eight characters.\n" +
                 "2. A password consists of only letters and digits.\n" +
                 "3. A password must contain at least two digits \n"); 
-               s = sc.next();
-               setPassword(s);
+               
+               ob.setPassword(sc.next());
 			try {
-				if (is_Valid_Password(s)) // is_Valid_Password method calls
+				if (is_Valid_Password(ob.getpassword())) // is_Valid_Password method calls
 				{
-		            		System.out.println("Password is valid: " + s);
+		            		System.out.println("Password is valid: " + ob.getpassword());
 		            		showing();
 		        	}	 
 				else {
@@ -116,7 +115,7 @@ public class Main_Class  extends Variable_Class{ // main class taking all the pr
 	public static void main(String[] args)
 	{
 		Main_Class ob = new Main_Class();
-		ob.details();
+		obj.details();
 	}
 
 }
