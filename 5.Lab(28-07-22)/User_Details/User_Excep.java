@@ -1,4 +1,4 @@
-package Revision;
+package Ecap_Check;
 
 // this is exception class that handle the another class exception 
 public class User_Excep  extends Exception{
