@@ -8,7 +8,7 @@ public class Variable_Class {
   
 	Scanner sc = new Scanner(System.in);
 	// public variable that access by the another class
-  String name,add,ph,s,pass,ide;
+  String name,add,ph;
 	// private variables
   private String password,id;
 	
@@ -26,5 +26,10 @@ public class Variable_Class {
 		this.password = password;
 	}
 	public static final int PASSWORD_LENGTH = 8;
+	
+	public static void main(String[] args)
+	{
+		Variable_Class ob = new Variable_Class();
+	}
 	 
 }
