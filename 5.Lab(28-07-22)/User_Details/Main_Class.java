@@ -1,8 +1,9 @@
 //Write a program to accept basic details name , Phone No , Address , user Id and password from the user .throw an exception if 
-//the user Id lenght is greater than 8 and password is not matched and should only contain the string value.
-package Revision;
+//the user Id length is greater than 8 and password is not matched and should only contain the string value.
+package Ecap_Check;
 
-public class Main_Class  { // main class taking all the properties of Variable class
+public class Main_Class extends Variable_Class{
+
 	
 	
 	public void details()	// details method calls inside the main method
@@ -18,15 +19,15 @@ public class Main_Class  { // main class taking all the properties of Variable c
 		System.out.print("Address : ");
 		add = sc.next();
 		
-		user_id(); // user_id mmethod calls			
+		user_id(); // user_id method calls			
 		
 	}
 	public void user_id()
 	{
 		System.out.print("Id : "); // taking id from the user
 		try {
-			ob.setId(sc.next());
-			if(ob.getId().length() != 6) // checking the length of id is 6 or not
+			setId(sc.next());
+			if(getId().length() != 6) // checking the length of id is 6 or not
 			{
 				throw new User_Excep("Enter the Valid Id here ."); // if length is not equal to 6 then throw an exception	
 			}
@@ -50,11 +51,11 @@ public class Main_Class  { // main class taking all the properties of Variable c
                 "2. A password consists of only letters and digits.\n" +
                 "3. A password must contain at least two digits \n"); 
                
-               ob.setPassword(sc.next());
+               setPassword(sc.next());
 			try {
-				if (is_Valid_Password(ob.getpassword())) // is_Valid_Password method calls
+				if (is_Valid_Password(getPassword())) // is_Valid_Password method calls
 				{
-		            		System.out.println("Password is valid: " + ob.getpassword());
+		            		System.out.println("Password is valid: " + getPassword());
 		            		showing();
 		        	}	 
 				else {
@@ -67,7 +68,7 @@ public class Main_Class  { // main class taking all the properties of Variable c
 			}
 		
 	}	
-		public static boolean is_Valid_Password(String password) { // this method checcking all the conditions of password
+		public static boolean is_Valid_Password(String password) { // this method checking all the conditions of password
 		
 		// if password length is not equal to password_length then return a false
 	        if (password.length() < PASSWORD_LENGTH) return false;
@@ -99,6 +100,7 @@ public class Main_Class  { // main class taking all the properties of Variable c
 	        return (ch >= '0' && ch <= '9');
 	    }
 
+
     
 	// if all the things true then showing method will be call
 	public void showing()
@@ -114,8 +116,10 @@ public class Main_Class  { // main class taking all the properties of Variable c
 	// main method
 	public static void main(String[] args)
 	{
-		Main_Class ob = new Main_Class();
+		Main_Class obj = new Main_Class();
 		obj.details();
 	}
 
 }
+
+
