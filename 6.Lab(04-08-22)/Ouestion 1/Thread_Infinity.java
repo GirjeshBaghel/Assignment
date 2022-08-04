@@ -2,10 +2,10 @@
 The threads should display the messages continuously till the user presses any key.
 */package Revision;
 
-public class Thread_Continue extends Thread
+public class Thread_Infinity extends Thread
 {
 	String str; // global variable
-	Thread_Continue(String s) // constructor taking a parameter
+	Thread_Infinity(String s) // constructor taking a parameter
 	{
 		str = s;
 	}
