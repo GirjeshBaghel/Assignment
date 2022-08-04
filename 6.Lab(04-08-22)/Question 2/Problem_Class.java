@@ -1,40 +1,39 @@
 package Revision;
+public class Problem_Class  {  // this is problem class that carry problem according to the ques
 
-public class Problem_Class  {
-
-   int materials;
+   int materials;  // global variables here
     boolean available = false;
-    public synchronized int get()
+    public synchronized int get() // synchronized method to get a true or false
     {
-          while (available == false)
+          while (available == false) // while loop for false condition
           {
                 try
                 {
-                      wait();
+                      wait(); // if false then problem will be wait
                 }
-                catch (InterruptedException ie)
+                catch (InterruptedException ie) // catching the exception
                 {
                 }
           }
-          available = false;
+          available = false; // material not available
           notifyAll();
-          return materials;
+          return materials; //return a material to the method
     }
-    public synchronized void put(int value)
+    public synchronized void put(int value) // synchronized method for true conditions
     {
-          while (available == true)
+          while (available == true) // while loop for true condition
           {
                 try
                 {
-                      wait();
+                      wait(); // wait the program
                 }
-                catch (InterruptedException ie)
+                catch (InterruptedException ie) // catching the Interrupted Exception here
                 {
                       ie.printStackTrace();
                 }
           }
-          materials = value;
-          available = true;
+          materials = value; // material available in a value
+          available = true; // material available here
           notifyAll();
     }
 
