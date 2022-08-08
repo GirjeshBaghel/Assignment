@@ -27,7 +27,7 @@
  
  Ques 3. Which is the Parent Class of Error class or Exception Class.
  Ans 3.   Object_Class  -> Throwable_Class -> 1.Error_Class
- 											  2.Exception_Class
+ 					      2.Exception_Class
 
  Ques 4. Write all the Checked Exception or Unchecked Exception.
  Ans 4. Checked exceptions are those exceptions that are checked by Java compiler at compilation. A list of some important checked exceptions are given below:
