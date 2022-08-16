@@ -1,5 +1,5 @@
+//Write a program to accept a string from the user and accept a character from the user and remove all occurrences of a given character from input String.
 package String;
-
 import java.util.Scanner;
 
 public class Remove_Occurence {
