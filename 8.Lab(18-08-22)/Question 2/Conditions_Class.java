@@ -75,8 +75,8 @@ public class Conditions_Class {
 	public static void main(String[] args)
 	{
 		Conditions_Class ob = new Conditions_Class();
-		//ob.same_char();
-		//ob.same_words();
+		ob.same_char();
+		ob.same_words();
 		ob.swap_words();
 	}
 
