@@ -1,3 +1,4 @@
+//Write a program to accept string from the user and check it is palindrome or not without using function of string builder and string buffer.
 package String;
 import java.util.Scanner;
 
