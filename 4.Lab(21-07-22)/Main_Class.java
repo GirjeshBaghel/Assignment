@@ -1,7 +1,7 @@
 package Revision;
 
 // calling class
-public class Calling_Bank {
+public class Main_Class {
 
 	// main method 
 	public static void main(String[] args) {
