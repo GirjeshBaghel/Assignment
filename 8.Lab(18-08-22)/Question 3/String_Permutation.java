@@ -1,3 +1,4 @@
+//Write a program to accept string from user and find all permutations of the string.
 package String;
 import java.util.Scanner;
 
