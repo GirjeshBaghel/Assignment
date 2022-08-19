@@ -3,7 +3,7 @@ package String;
 
 import java.util.Scanner;
 
-public class String_Ques {
+public class String_Reverse {
 	
 	 static Scanner sc = new Scanner(System.in);
 	static StringBuffer str1 = new StringBuffer("");
@@ -25,8 +25,8 @@ public class String_Ques {
 
 	public static void main(String[] args) {
 		
-		String_Ques ob= new String_Ques();
-		//ob.reverse();
+		String_Reverse ob= new String_Reverse();
+		ob.reverse();
 	}
 
 }
