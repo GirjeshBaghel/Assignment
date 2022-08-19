@@ -1,6 +1,5 @@
-
+//Write a program to reverse each word of the string.
 package String;
-
 import java.util.Scanner;
 
 public class String_Reverse {
