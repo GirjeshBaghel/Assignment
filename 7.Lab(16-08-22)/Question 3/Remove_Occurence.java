@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class Remove_Occurence {
 
-	Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);				// global variable declaration
 	String str;
 	char c;
 	int i,j,count;
 	
-	Remove_Occurence()
+	Remove_Occurence()						// constructor 
 	{
-		System.out.print("Enter a String here : ");
+		System.out.print("Enter a String here : ");		// taking a string from user
 		str = sc.nextLine();
-		System.out.print("Enter a Character : ");
-		c = sc.next().charAt(0);
-		str = str.toLowerCase();
-		char[] t = str.toCharArray();
-		for(i=j=0; i<str.length(); i++)
+		System.out.print("Enter a Character : ");		// taking a character to remove from the string
+		c = sc.next().charAt(0);				// storing a character
+		str = str.toLowerCase();				// convert a string in a lower case
+		char[] t = str.toCharArray();				// stored that string in t array
+		for(i=j=0; i<str.length(); i++)				// for loop running the for two times I and J
 		{
 			if(t[i] != c)
 			{
@@ -29,7 +29,7 @@ public class Remove_Occurence {
 		while(count>0)
 		{
 			t[j++] = '\0';
-	        count--;
+	        	count--;
 		}
 		System.out.println(t);
 		
