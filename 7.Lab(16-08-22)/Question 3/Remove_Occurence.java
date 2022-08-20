@@ -26,7 +26,7 @@ public class Remove_Occurence {
 			else 
 				count++;
 		}
-		while(count>0)
+		while(count>0)						// checking count is greater than zero than while running
 		{
 			t[j++] = '\0';
 	        	count--;
@@ -36,8 +36,8 @@ public class Remove_Occurence {
 	}
 	
 	
-	public static void main(String... args)
+	public static void main(String... args)				// main method
 	{
-		new Remove_Occurence();
-	}
+		new Remove_Occurence();					// consructor calling
+	}	
 }
