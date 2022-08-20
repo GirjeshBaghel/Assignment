@@ -2,30 +2,30 @@
 package String;
 import java.util.Scanner;
 
-public class String_Reverse {
+public class String_Reverse {			
 	
-	 static Scanner sc = new Scanner(System.in);
-	static StringBuffer str1 = new StringBuffer("");
+	static Scanner sc = new Scanner(System.in);			// global variable declaration
+	static StringBuffer str1 = new StringBuffer("");		// creating string buffer here 
 	static StringBuffer str2 = new StringBuffer("");
 	
-	 static void accept()
+	 static void accept()						// accept method
 	{
-		System.out.print("Enter a First String : ");
+		System.out.print("Enter a First String : ");		// taking a string from user
 		str1.append(sc.nextLine());
-		System.out.print("Enter a Second  String : ");
+		System.out.print("Enter a Second  String : ");		// taking a another string from user
 		str2.append(sc.nextLine());
 				
 	}
-	void reverse()
+	void reverse()							// reverse method
 	{
-		accept();
-		System.out.println("Reverse String are : "+str1.reverse());
+		accept();						// calling a reverse method
+		System.out.println("Reverse String are : "+str1.reverse());	
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {			// main method
 		
-		String_Reverse ob= new String_Reverse();
-		ob.reverse();
+		String_Reverse ob= new String_Reverse();		// creating a object
+		ob.reverse();						// calls a reverse method
 	}
 
 }
