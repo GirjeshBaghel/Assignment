@@ -58,6 +58,7 @@ public class Conditions_Class {
 			
 		}
 		System.out.println(st);							// printing same words here
+		System.out.println("No of Words Count : "+count);			// printing no of count words
 		
 	}
 	void swap_words()								// swap words method
