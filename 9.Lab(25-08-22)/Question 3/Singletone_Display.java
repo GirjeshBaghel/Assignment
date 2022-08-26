@@ -1,8 +1,5 @@
-
-/*Q3)Write a program to implement the use of singleton class
-*/
-package Aug_25;
-
+//Write a program to implement the use of singleton class
+package InputOutput;
 public class Singletone_Display {
 
 	public static void main(String[] args) {
