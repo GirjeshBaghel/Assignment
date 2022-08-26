@@ -2,22 +2,20 @@
 package InputOutput;
 import java.util.Scanner;
 
-public class Singletone_Class {
-	// static variable s of type Singleton having null value 
-	private static Singletone_Class s = null;
+public class Singletone_Class
+{
+	
+    private static Singletone_Class s = null;		// static variable s of type Singleton having null value 		
     public String str; 
-    // create private constructor of class
-    private Singletone_Class()
-      {// store the string value
-     str = "Hello! This is a java program.\n In this we create a single tone class";
+    
+    private Singletone_Class()				// create private constructor of class
+    {	   
+     	str = "Hello! This is a java program.\n In this we create a single tone class"; 		 // store the string value
     }
-    
-    
-    //Static method to create instance of Singleton class
-    public static Singletone_Class getInstance()
+    public static Singletone_Class getInstance()	//Static method to create instance of Singleton class
     {
-     if (s == null)
-     s = new Singletone_Class();
-     return s;
+	     if (s == null)
+	     s = new Singletone_Class();
+	     return s;
     }
-  }
+ }
