@@ -1,3 +1,4 @@
+
 class student
 {
         private String name;
@@ -29,12 +30,11 @@ class student
         }
 }
 
-
 import java.util.*;
 class StudCompare implements Comparator<student>
 {
         @Override
-                public int compare(student stud1, student stud2)
+        public int compare(student stud1, student stud2)
         {
                 if (stud1.getReg() < stud2.getReg())
                 {
