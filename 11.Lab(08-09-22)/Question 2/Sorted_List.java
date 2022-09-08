@@ -1,14 +1,14 @@
-
-class student
+//Write a program to accept product name, ID, Price . Arrange the data in Descending order and display the output. (Using Linked List).
+class student                                                           // another class that taking the variable
 {
-        private String name;
+        private String name;                                            // private variable declaration
         private int regNumber;
-        public student(String n, int reg)
+        public student(String n, int reg)                               // to string method
         {
                 this.name = n;
                 this.regNumber = reg;
         }
-        public String getName()
+        public String getName()                                         // getter setter method
         {
                 return name;
         }
@@ -31,10 +31,10 @@ class student
 }
 
 import java.util.*;
-class StudCompare implements Comparator<student>
+class StudCompare implements Comparator<student>                        // this class implements the comparator of string
 {
         @Override
-        public int compare(student stud1, student stud2)
+        public int compare(student stud1, student stud2)                // compare method that override by comparator interface
         {
                 if (stud1.getReg() < stud2.getReg())
                 {
