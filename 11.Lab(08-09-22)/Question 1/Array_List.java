@@ -7,55 +7,55 @@ import java.util.Scanner;
 
 public class Array_List {
 	
-	Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);						// global variable 
 	int no,i;
 	String name,email,ph,per,name1;
-	void accept()
+	void accept()									// accept method that the data fron the user
 	{
 		System.out.println("How many Students data to be stored : ");
 		no = sc.nextInt();
 		
-		ArrayList<String> an = new ArrayList<>(no);
-		ArrayList<String> ae = new ArrayList<>(no);
-		ArrayList<String> apn = new ArrayList<>(no);
-		ArrayList<String> ap = new ArrayList<>(no);
-		for(i=0; i<no; i++)
+		ArrayList<String> an = new ArrayList<>(no);				// making arraylist of name 
+		ArrayList<String> ae = new ArrayList<>(no);				// making arraylist of email 
+		ArrayList<String> apn = new ArrayList<>(no);				// making arraylist of phone no 
+		ArrayList<String> ap = new ArrayList<>(no);				// making arraylist of percentage 
+		
+		for(i=0; i<no; i++)							// for loop for no of student data to be stored
 		{
-			System.out.println("Enter the Student Details here  : ");
-			System.out.print("Name : ");
-			name = sc.next();
+			System.out.println("Enter the Student Details here  : ");	
+			System.out.print("Name : ");					// taking a student name
+			name = sc.next();						
 			an.add(name);
-			System.out.print("Email : ");
+			System.out.print("Email : ");					// taking a student email
 			email = sc.next();
 			ae.add(email);
-			System.out.print("Phone No : ");
+			System.out.print("Phone No : ");				// taking a student Phone No
 			ph= sc.next();
 			apn.add(ph);
-			System.out.print("Percentage : ");
+			System.out.print("Percentage : ");				// taking a student percentage
 			per= sc.next();
 			ap.add(per);		
-							
-		}
-		
-		System.out.println("Name : "+an);
-		System.out.println("Email : "+ae);
-		System.out.println("Phone No : "+apn);
-		System.out.println("Percentage : "+ap);
-		System.out.println("Enter the Name to delete : ");
-		name1 = sc.next();
-		an.contains(name1);
-		if(name1.equalsIgnoreCase(name))
-		{
-			an.remove(name);
-			System.out.println("Name : "+an);
 			
 		}
 		
+		System.out.println("Name : "+an);					// printing the name Array List 
+		System.out.println("Email : "+ae);					// printing the email Array List 
+		System.out.println("Phone No : "+apn);					// printing the Phone No Array List 
+		System.out.println("Percentage : "+ap);					// printing the Percentage Array List 
+		System.out.println("Enter the Name to delete : ");
+		name1 = sc.next();							// taking a name to be delete the data of that array list
+		an.contains(name1);
+		if(name1.equalsIgnoreCase(name))					// checking name if equal to arraylist name
+		{
+			an.remove(name);						// removing the list of perticular list
+			System.out.println("Name : "+an);
+			
+		}
 	}
-	public static void main(String[] args)
+	public static void main(String[] args)						// main method
 	{
 		Array_List ob = new Array_List();
-		ob.accept();
+		ob.accept();								// calling accept method
 	}
 
 }
