@@ -5,6 +5,6 @@ Ques 1. write a program to accept name, Email, Phone Number, Percentage from the
 Ques 2. Write a program to accept product name, ID, Price . Arrange the data in Descending order and display the output. (Using Linked List).
 
 Ques 3. Write a Java program to implement following options on LinkedList using collections.
-        Intersection
-        Union
+        Intersection,
+        Union,
         Display
