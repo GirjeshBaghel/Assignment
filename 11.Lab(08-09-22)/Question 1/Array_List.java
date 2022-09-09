@@ -9,7 +9,7 @@ public class Array_List {
 	
 	Scanner sc = new Scanner(System.in);						// global variable 
 	int no,i;
-	String name,email,ph,per,name1;
+	String name,email,ph,per,name1,dn,de,dpn,dper;
 	void accept()									// accept method that the data fron the user
 	{
 		System.out.println("How many Students data to be stored : ");
@@ -44,13 +44,28 @@ public class Array_List {
 		System.out.println("Percentage : "+ap);					// printing the Percentage Array List 
 		System.out.println("Enter the Name to delete : ");
 		name1 = sc.next();							// taking a name to be delete the data of that array list
-		an.contains(name1);
-		if(name1.equalsIgnoreCase(name))					// checking name if equal to arraylist name
+		for(i=0; i<an.size(); i++)
 		{
-			an.remove(name);						// removing the list of perticular list
-			System.out.println("Name : "+an);
-			
+			if(an.get(i).contains(name1))
+			{
+				dn  = an.get(i).replaceAll(name, "");
+				 de  = ae.get(i).replaceAll(email, "");
+				 dpn = apn.get(i).replaceAll(ph, "");
+				dper = ap.get(i).replaceAll(per, "");
+								
+				System.out.println("Successfully Deleted ");
+				System.out.println("Name : "+an.get(i));
+				System.out.println("Email : "+ae.get(i));
+				System.out.println("Phone No : "+apn.get(i));
+				System.out.println("Percentage : "+ap.get(i));
+				
+			}
+			else
+			{
+				System.out.println("Name not Found ..");
+			}
 		}
+		
 	}
 	public static void main(String[] args)						// main method
 	{
