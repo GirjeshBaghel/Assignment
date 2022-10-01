@@ -2,13 +2,13 @@ package JDBC_Program;
 
 import java.sql.*;
 
-public class StudentDao {
+public class StudentDao {						// this class control the student data
 
-	public static boolean insertStudentToDB(Student st) throws Exception 
+	public static boolean insertStudentToDB(Student st) throws Exception 		// this take the data from user and stored in a data base
 	{
 		boolean f = false;
 		Connection con = CP.createC();
-		String q = "insert into student(s_name,s_ph,s_city)values(?,?,?)";
+		String q = "insert into student(s_name,s_ph,s_city)values(?,?,?)";	// query of inserting data
 		PreparedStatement ps = con.prepareStatement(q);
 		ps.setString(1, st.getStudentName());
 		ps.setString(2, st.getStudentPhone());
@@ -19,10 +19,10 @@ public class StudentDao {
 				
 	}
 
-	public static boolean deleteStudentToDB(int d_id)  throws Exception{
+	public static boolean deleteStudentToDB(int d_id)  throws Exception{		// delete student data from data base
 		boolean f = false;
 		Connection con = CP.createC();
-		String q = "delete from student where s_id=?";
+		String q = "delete from student where s_id=?";				// query to delete the data by the help od Student Id
 		PreparedStatement ps = con.prepareStatement(q);
 		ps.setInt(1, d_id);
 		ps.executeUpdate();
@@ -31,9 +31,9 @@ public class StudentDao {
 		
 	}
 	
-	public static void showAllStudent()  throws Exception{
+	public static void showAllStudent()  throws Exception{			// this method show all the student data 
 		Connection con = CP.createC();
-		String q = "select * from student";
+		String q = "select * from student";				// query of show data
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery(q);
 		System.out.println("Id\t\tName\t\tPhone\t\tCity");
@@ -52,7 +52,7 @@ public class StudentDao {
 		
 	}
 
-	public static void updateStudent() throws Exception 
+	public static void updateStudent() throws Exception 			// this method update student data
 	{
 		Connection con = CP.createC();
 		System.out.println("Enter Student Id : ");
