@@ -5,21 +5,22 @@ import java.util.Scanner;
 
 public class Start {
 
-	Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);					// global variable and connection with mysql
 	int id,up ;
 	String name,ph,city,query;
 	Connection con;
 	String url = "jdbc:mysql://localhost:3306/student_manager";
 	String user = "root";
 	String pass = "12345";
-	public Connection create() throws Exception
+	
+	public Connection create() throws Exception				// connection create function
 	{
 		
 		 query = "insert into student values(?,?,?,?)";
 		 con =DriverManager.getConnection(url,user,pass);
 		 return con;
 	}
-	public void addstd() throws Exception
+	public void addstd() throws Exception					// add student data method
 	{
 		create();
 		PreparedStatement ps = con.prepareStatement(query);
@@ -45,7 +46,7 @@ public class Start {
 		 System.out.println("Data Successfully Added ..");
 		
 	}
-	public void delstd() throws Exception
+	public void delstd() throws Exception					// delete student data
 	{
 		create();
 		
@@ -61,7 +62,7 @@ public class Start {
 		System.out.println("Deleted Successfully ");
 	}
 	
-	public void show() throws Exception
+	public void show() throws Exception						// show student data
 	{
 		create();
 		 ResultSet rst = null;
@@ -80,7 +81,7 @@ public class Start {
 		con.close();
 		
 	}
-	public void update() throws Exception
+	public void update() throws Exception							// update student data
 	{
 		//System.out.println("Enter the Id to Update Student Data : ");
 		//up = sc.nextInt();
@@ -106,7 +107,7 @@ public class Start {
 		}
 			
 	}
-	public void name() throws Exception
+	public void name() throws Exception					//  update the name of student
 	{
 		System.out.print("Enter Id here : ");
 		int n_id = sc.nextInt();
@@ -123,7 +124,7 @@ public class Start {
 		
 	}
 	
-	public void phno() throws Exception
+	public void phno() throws Exception				// update the student phone no here
 	{
 		System.out.print("Enter Id here : ");
 		int n_id = sc.nextInt();
@@ -140,7 +141,7 @@ public class Start {
 		
 	}
 	
-	public void city() throws Exception
+	public void city() throws Exception  				// update the city of student
 	{
 		System.out.print("Enter Id here : ");
 		int n_id = sc.nextInt();
@@ -157,7 +158,7 @@ public class Start {
 		
 	}
 	
-	public void start() throws Exception
+	public void start() throws Exception				// start method that call the inside the main method
 	{
 		
 		char ans;
@@ -199,7 +200,7 @@ public class Start {
 			
 	}
 	
-	public static void main(String[] args) throws Exception 
+	public static void main(String[] args) throws Exception 		// main method
 	{
 		Start ob = new Start();
 		ob.start();
