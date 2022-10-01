@@ -1,8 +1,8 @@
 package JDBC_Program;
 
-public class Student {
-
-	private int studentId;
+public class Student {					// this class is variable taking class in this class data are private so i make the getter and setter 
+							// methods to use our vairabes
+	private int studentId;				
 	private String studentName;
 	private String studentPhone;
 	private String studentCity;
