@@ -16,6 +16,10 @@ public class Start {
 		{
 			System.out.print("Enter Book Id : ");
 			b_id  = sc.next();
+			if(b_id.charAt(0)!='b' && b_id.charAt(0)!='B')
+			{
+				throw new Exception("enter valid book id.......(BOOK ID SHOULD START WITH B OR b)");
+			}
 			
 			System.out.print("Enter Book Title  : ");
 			b_title = sc.next();
@@ -25,9 +29,18 @@ public class Start {
 			 
 			 System.out.print("Enter Book Category : ");
 			 b_category = sc.next();
+			 if(b_category!= "Science" &&  b_category!="Fiction"&& b_category!="Technology"&& b_category!="other")
+				{
+					throw new Exception("enter valid category.......(CATEGERY SHOULD HAVE SCIENCE,FICTION,TECHNOLOGY,ETC)");
+				}
 			 
 			 System.out.print("Enter Book Price : ");
 			 b_price = sc.nextFloat();
+			
+			if(b_price < 0 ) {
+					//this  get caught in catch block
+					throw new Exception("enter valid price.......(PRICE SHOULD NOT BE NAGATIVE)");	
+				}
 			 
 			Book_Data st1 = new Book_Data(b_id,b_title,b_author,b_category,b_price);
 			boolean ans = BookDao.addbookDao(st1);
@@ -43,7 +56,7 @@ public class Start {
 	 
 	public void start() throws Exception
 	{
-		System.out.println("Welcome to Student Manager App");
+		System.out.println("Welcome to Books Data ");
 		do
 		{
 			System.out.println("PRESS 1 : ADD Book");
@@ -60,11 +73,12 @@ public class Start {
 					break;
 				
 				case 2:
-					BookDao.dis_titleDao();
+					title_sear();
+					
 					break;
 					
 				case 3:
-					//search_author();
+					author_sear();
 					break;
 				case 4:
 					BookDao.dis_allDao();
@@ -81,6 +95,29 @@ public class Start {
 
 	}
 
+	public  void title_sear() throws Exception {
+			System.out.println("Enter Title Name here : ");
+			String til = sc.next();
+			boolean f = true;
+			if(f)
+			{
+				BookDao.dis_titleDao(til);
+			}
+			else
+				System.out.println("Please Enter correct Title here ");
+		}
+	public  void author_sear() throws Exception {
+		System.out.println("Enter Author Name here : ");
+		String au = sc.next();
+		boolean f = true;
+		if(f)
+		{
+			BookDao.dis_authorDao(au);
+		}
+		else
+			System.out.println("Please Enter correct Title here ");
+
+	}
 	public static void main(String[] args)  throws Exception{
 		Start ob = new Start();
 		ob.start();
