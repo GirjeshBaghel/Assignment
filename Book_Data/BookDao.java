@@ -1,13 +1,8 @@
 package Books;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-
-import JDBC_Program.CP;
+import java.sql.*;
+import com.mysql.cj.xdevapi.Result;
 import JDBC_Program.Student;
-
 public class BookDao {
 	
 	public static boolean addbookDao(Book_Data st) throws Exception 
@@ -51,10 +46,52 @@ public class BookDao {
 		
 	}
 
-	public static void dis_titleDao() throws Exception {
+	public static boolean dis_titleDao(String til) throws Exception {
+		String s = "select * from book where title=?"; 
+		boolean f = false;
 		Connection con = Connection_Class.createC();
-		
-		
+		PreparedStatement ps = con.prepareStatement(s);
+		ps.setString(1, til);
+		System.out.println("**=============**=================**=============**");
+		ResultSet rs = ps.executeQuery();
+		System.out.println("Book_Id\t\tBook_Title\t\tBook_Author\t\tBook_Category\t\tBook_Price");
+		while(rs.next())
+		{
+			
+			 System.out.print(rs.getString(1));
+	           System.out.print("\t\t"+rs.getString(2));
+	           System.out.print("\t\t\t"+rs.getString(3));
+	           System.out.print("\t\t\t"+rs.getString(4));
+	           System.out.print("\t\t\t"+rs.getFloat(5));
+	           System.out.println();			
+		}
+		System.out.println("**=============**=================**=============**");
+		f= true;
+		return f;
+	}
+
+	public static boolean dis_authorDao(String au) throws Exception {
+		String s = "select * from book where author=?"; 
+		boolean f = false;
+		Connection con = Connection_Class.createC();
+		PreparedStatement ps = con.prepareStatement(s);
+		ps.setString(1, au);
+		System.out.println("**=============**=================**=============**");
+		ResultSet rs = ps.executeQuery();
+		System.out.println("Book_Id\t\tBook_Title\t\tBook_Author\t\tBook_Category\t\tBook_Price");
+		while(rs.next())
+		{
+			
+			 System.out.print(rs.getString(1));
+	           System.out.print("\t\t"+rs.getString(2));
+	           System.out.print("\t\t\t"+rs.getString(3));
+	           System.out.print("\t\t\t"+rs.getString(4));
+	           System.out.print("\t\t\t"+rs.getFloat(5));
+	           System.out.println();			
+		}
+		System.out.println("**=============**=================**=============**");
+		f= true;
+		return f;
 	}
 
 
